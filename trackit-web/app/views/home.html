@@ -8,8 +8,8 @@
         </select>
         <button class="btn btn-info" ng-click="add()">Add</button>
     </form>
-    <div class="alert alert-success" ng-show="success">
-        <string>Well done!</string> {{ task.title }} successfully added!
+    <div class="alert alert-success" ng-show="addedTask">
+        <string>Well done!</string> {{ addedTask.title }} successfully added!
     </div>
 </div>
 <div class="row">

@@ -7,6 +7,7 @@ angular.module('trackitWebApp.controllers')
         $scope.doneTasks = Task.query({status: 'done'});
 
         $scope.task = new Task();
+        $scope.addedTask = false;
 
         $scope.add = function() {
             $scope.task.$save({},
@@ -26,10 +27,11 @@ angular.module('trackitWebApp.controllers')
                         default:
                             break;
                     }
+                    $scope.addedTask = $scope.task;
                     $scope.task = new Task();
                 },
                 function() {
-
+                	$scope.taskAdded = false;
                 })
             ;
         };
