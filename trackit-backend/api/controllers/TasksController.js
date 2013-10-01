@@ -5,13 +5,18 @@
  * @description	:: Contains logic for handling requests.
  */
 
-module.exports = {
-
-  /* e.g.
-  sayHello: function (req, res) {
-    res.send('hello world!');
-  }
-  */
-  
-
-};
+ module.exports = {
+ 	search: function (req, res) {
+ 		Tasks.find({
+ 			title: {
+ 				contains: req.param("q")
+ 			}
+ 		}).done(function(err, tasks) {
+ 			if (err) {
+ 				res.send(500, {error: 'DB Error'});
+ 			} else {
+ 				res.send(tasks);
+ 			}
+ 		});
+ 	}
+ };
