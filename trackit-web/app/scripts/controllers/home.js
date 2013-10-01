@@ -10,8 +10,23 @@ angular.module('trackitWebApp.controllers')
 
         $scope.add = function() {
             $scope.task.$save({},
-                function() {
-
+                function(resp) {
+                    $scope.success = true;
+                    var task = new Task(resp);
+                    switch (task.status) {
+                        case 'Todo':
+                            $scope.todoTasks.push(task);
+                            break;
+                        case 'Doing':
+                            $scope.doingTasks.push(task);
+                            break;
+                        case 'Done':
+                            $scope.doneTasks.push(task);
+                            break;
+                        default:
+                            break;
+                    }
+                    $scope.task = new Task();
                 },
                 function() {
 
