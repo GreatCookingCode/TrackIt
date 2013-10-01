@@ -22,10 +22,10 @@
  		tags: {
  			type: 'array'
  		},
- 		archibed: {
- 			type: 'boolean',
+ 		archived: {
+ 			type: 'string',
  			required: true,
- 			defaultsTo: false
+ 			defaultsTo: "false"
  		}
  	}
  };

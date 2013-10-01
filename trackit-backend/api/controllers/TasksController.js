@@ -24,19 +24,27 @@
  		if (req.param("status")) {
  			Tasks.findByStatus(req.param("status")).done(function(err, tasks) {
  				if (err) {
- 					return console.log(err);} else {
- 						res.send(tasks);
- 					}
- 				});
- 		}
- 		else {
+ 					return console.log(err);
+ 				} else {
+ 					res.send(tasks);
+ 				}
+ 			});
+ 		} else if (req.param("archived")) {
+ 			Tasks.findByArchived(req.param("archived")).done(function(err, tasks) {
+ 				if (err) {
+ 					return console.log(err);
+ 				} else {
+ 					res.send(tasks);
+ 				}
+ 			});
+ 		} else {
  			Tasks.find().done(function(err, tasks) {
  				if (err) {
  					res.send(500, {error: 'DB Error'});
- 			} else {
- 				res.send(tasks);
- 			}
- 		});
+ 				} else {
+ 					res.send(tasks);
+ 				}
+ 			});
  		}
  	}
  };
