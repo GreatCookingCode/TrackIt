@@ -4,21 +4,9 @@ body {
     color: #333;
 }
 
-.todo-cols {
-    width: 350px;
-    padding: 5px;
-    margin: 10px;
-}
-
 .todo-cols .alert {
     margin-left: 10px;
     margin-right: 10px;
-}
-
-.todo-cols {
-    border-radius: 2px;
-    background-color: #EEE;
-    float: left;
 }
 
 .todo-cols ul {
@@ -39,8 +27,7 @@ body {
 }
 
 .create-task {
-    margin: 10px;
-    height: 30px;
+    height: 50px;
 }
 
 .create-task input {

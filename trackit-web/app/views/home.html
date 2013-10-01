@@ -8,9 +8,12 @@
         </select>
         <button class="btn btn-info" ng-click="add()">Add</button>
     </form>
+    <div class="alert alert-success">
+        <string>Well done!</string> {{ task.title }} successfully added!
+    </div>
 </div>
-<div>
-    <div class="todo-cols" id="todo-list">
+<div class="row">
+    <div class="col-md-4" id="todo-list">
         <h4>Todo</h4>
         <div ng-switch="todoTasks.length">
             <div ng-switch-default="">
@@ -27,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="todo-cols" id="doing-lit">
+    <div class="col-md-4" id="doing-lit">
         <h4>Doing</h4>
         <div ng-switch="todoTasks.length">
             <div ng-switch-default="">
@@ -44,7 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="todo-cols" id="done-list">
+    <div class="col-md-4" id="done-list">
         <h4>Done</h4>
         <div ng-switch="todoTasks.length">
             <div ng-switch-default="">
