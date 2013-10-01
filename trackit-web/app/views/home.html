@@ -1,0 +1,14 @@
+<table class="table table-bordered table-striped">
+	<thead>
+		<th>Titre</th>
+		<th>Status</th>
+		<th>Body</th>
+	</thead>	
+	<tbody>
+		<tr ng-repeat="task in tasks">
+			<td>{{task.title}}</td>
+			<td>{{task.status}}</td>
+			<td>{{task.body}}</td>
+		</tr>
+	</tbody>
+</table>
