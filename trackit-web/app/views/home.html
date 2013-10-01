@@ -1,14 +1,58 @@
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Titre</th>
-		<th>Status</th>
-		<th>Body</th>
-	</thead>	
-	<tbody>
-		<tr ng-repeat="task in tasks">
-			<td>{{task.title}}</td>
-			<td>{{task.status}}</td>
-			<td>{{task.body | truncate}}</td>
-		</tr>
-	</tbody>
-</table>
+<div>
+    <table>
+        
+    </table>
+</div>
+<div>
+    <div class="todo-cols" id="todo-list">
+        <h4>Todo</h4>
+        <div ng-switch="todoTasks.length">
+            <div ng-switch-default="">
+                <ul>
+                    <li ng-repeat="task in todoTasks" class="task">
+                        {{ task.title | truncate }}
+                    </li>
+                </ul>
+            </div>
+            <div ng-switch-when="0">
+                <div class="alert alert-info">
+                    <strong>Heads up! There is no task here: good job ;)</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="todo-cols" id="doing-lit">
+        <h4>Doing</h4>
+        <div ng-switch="todoTasks.length">
+            <div ng-switch-default="">
+                <ul>
+                    <li ng-repeat="task in doingTasks" class="task">
+                        {{ task.title | truncate }}
+                    </li>
+                </ul>
+            </div>
+            <div ng-switch-when="0">
+                <div class="alert alert-info">
+                    <strong>Heads up! There is no task here: are you sure you are working?</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="todo-cols" id="done-list">
+        <h4>Done</h4>
+        <div ng-switch="todoTasks.length">
+            <div ng-switch-default="">
+                <ul>
+                    <li ng-repeat="task in doneTasks" class="task">
+                        {{ task.title | truncate }}
+                    </li>
+                </ul>
+            </div>
+            <div ng-switch-when="0">
+                <div class="alert alert-info">
+                    <strong>Heads up! There is no task here: did you finish every thing or you have nothing to do?</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
