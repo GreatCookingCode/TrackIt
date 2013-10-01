@@ -14,10 +14,12 @@ angular.module('trackitWebApp', [ 'trackitWebApp.dependencies' ])
 ;
 
 angular.module('trackitWebApp.controllers', []);
+angular.module('trackitWebApp.directives', []);
 angular.module('trackitWebApp.services', [ 'ngResource' ]);
 
 angular.module('trackitWebApp.dependencies', [
     'ngRoute',
     'trackitWebApp.services',
-    'trackitWebApp.controllers'
+    'trackitWebApp.controllers',
+    'trackitWebApp.directives'
 ]);
