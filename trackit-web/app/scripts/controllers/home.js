@@ -8,6 +8,7 @@ angular.module('trackitWebApp.controllers')
 
         $scope.task = new Task();
         $scope.addedTask = false;
+        $scope.deletedTask = false;
 
         $scope.add = function() {
             $scope.task.$save({},
@@ -28,12 +29,37 @@ angular.module('trackitWebApp.controllers')
                             break;
                     }
                     $scope.addedTask = $scope.task;
+                    $scope.deletedTask = false;
                     $scope.task = new Task();
                 },
                 function() {
-                	$scope.taskAdded = false;
+                	$scope.addedTask = false;
                 })
             ;
         };
+
+        $scope.delete = function(id) {
+        	var task = new Task({id: id});
+        	task.$delete({}, function() {
+        		switch (task.status) {
+	                case 'Todo':
+	                    $scope.todoTasks.splice(task, 1);
+	                    break;
+	                case 'Doing':
+	                    $scope.doingTasks.splice(task, 1);
+	                    break;
+	                case 'Done':
+	                    $scope.doneTasks.splice(task, 1);
+	                    break;
+	                default:
+	                    break;
+	            }
+	            $scope.deletedTask = task;
+	            $scope.addedTask = false;		
+        	},
+        	function() {
+        		$scope.deletedTask = false;
+        	});			
+        }
     })
 ;

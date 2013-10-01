@@ -11,6 +11,9 @@
     <div class="alert alert-success" ng-show="addedTask">
         <string>Well done!</string> {{ addedTask.title }} successfully added!
     </div>
+    <div class="alert alert-success" ng-show="deletedTask">
+        <string>Well done!</string> {{ deletedTask.title }} successfully deleted!
+    </div>
 </div>
 <div class="row well">
     <div class="col-md-4 task-list" id="todo-list">
@@ -20,6 +23,7 @@
                 <ul>
                     <li ng-repeat="task in todoTasks" class="task">
                         {{ task.title | truncate:30 }}
+                        <a ng-click="delete({{task.id}})">Delete</a>
                     </li>
                 </ul>
             </div>
@@ -32,11 +36,12 @@
     </div>
     <div class="col-md-4 task-list" id="doing-lit">
         <h4>Doing</h4>
-        <div ng-switch="todoTasks.length">
+        <div ng-switch="doingTasks.length">
             <div ng-switch-default="">
                 <ul>
                     <li ng-repeat="task in doingTasks" class="task">
                         {{ task.title | truncate:30 }}
+                        <a ng-click="delete({{task.id}})">Delete</a>
                     </li>
                 </ul>
             </div>
@@ -49,11 +54,12 @@
     </div>
     <div class="col-md-4 task-list" id="done-list">
         <h4>Done</h4>
-        <div ng-switch="todoTasks.length">
+        <div ng-switch="doneTasks.length">
             <div ng-switch-default="">
                 <ul>
                     <li ng-repeat="task in doneTasks" class="task">
                         {{ task.title | truncate:30 }}
+                        <a ng-click="delete({{task.id}})">Delete</a>
                     </li>
                 </ul>
             </div>
