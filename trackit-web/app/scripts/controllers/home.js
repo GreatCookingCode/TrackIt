@@ -6,19 +6,19 @@ angular.module('trackitWebApp.controllers')
 			{
 				title: 'Installer NodeJS',
 				status: 'OK',
-				body: 'blabablabla',
+				body: 'blabablablablabablablablabablabla',
 
 			},
 			{
 				title: 'Installer Sails',
 				status: 'OK',
-				body: 'blabablabla',
+				body: 'blabablablablabablablablabablabla',
 
 			},
 			{
 				title: 'Installer Angular',
 				status: 'OK',
-				body: 'blabablabla',
+				body: 'blabablablablabablablablabablabla',
 			}
 		]
     })
