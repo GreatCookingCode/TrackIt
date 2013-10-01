@@ -32,8 +32,7 @@
  		else {
  			Tasks.find().done(function(err, tasks) {
  				if (err) {
- 					return console.log(err);
- 				// res.send(500, {error: 'DB Error'});
+ 					res.send(500, {error: 'DB Error'});
  			} else {
  				res.send(tasks);
  			}
