@@ -17,7 +17,8 @@
  		status: {
  			type: 'string',
  			required: true,
- 			defaultsTo: 'Open'
+ 			defaultsTo: 'Todo',
+ 			in: ['Todo', 'Doing', 'Done']
  		},
  		tags: {
  			type: 'array'
