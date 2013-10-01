@@ -1,13 +1,13 @@
 <div class="clearfix">
-    <div class="create-task">
-        <input type="text" class="form-control" ng-model="task.status">
+    <form class="create-task">
+        <input type="text" class="form-control" ng-model="task.title" required="">
         <select class="form-control" ng-model="task.status">
             <option value="Todo">Todo</option>
             <option value="Doing">Doing</option>
             <option value="Done">Done</option>
         </select>
         <button class="btn btn-info" ng-click="add()">Add</button>
-    </div>
+    </form>
 </div>
 <div>
     <div class="todo-cols" id="todo-list">
