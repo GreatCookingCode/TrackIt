@@ -20,7 +20,7 @@
  		});
  	},
 
- 	index: function(req, res) {
+ 	find: function(req, res) {
  		if (req.param("status")) {
  			Tasks.findByStatus(req.param("status")).done(function(err, tasks) {
  				if (err) {

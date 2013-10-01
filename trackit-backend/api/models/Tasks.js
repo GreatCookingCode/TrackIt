@@ -7,7 +7,6 @@
  */
 
  module.exports = {
-
  	attributes: {
  		title: {
  			type: 'string',
@@ -22,6 +21,11 @@
  		},
  		tags: {
  			type: 'array'
+ 		},
+ 		archibed: {
+ 			type: 'boolean',
+ 			required: true,
+ 			defaultsTo: false
  		}
  	}
  };
