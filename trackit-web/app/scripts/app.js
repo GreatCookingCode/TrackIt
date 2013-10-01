@@ -24,4 +24,5 @@ angular.module('trackitWebApp.dependencies', [
     'trackitWebApp.controllers',
     'trackitWebApp.directives',
     'trackitWebApp.filters',
+    'ui.bootstrap'
 ]);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trackitWebApp.controllers')
-    .controller('HomeCtrl', function ($scope, Task) {
+    .controller('HomeCtrl', function ($scope, Task, $modal) {
         $scope.todoTasks = Task.query({status: 'todo'});
         $scope.doingTasks = Task.query({status: 'doing'});
         $scope.doneTasks = Task.query({status: 'done'});
@@ -60,6 +60,18 @@ angular.module('trackitWebApp.controllers')
         	function() {
         		$scope.deletedTask = false;
         	});			
-        }
+        };
+
+        $scope.openTask = function() {
+            var modal = $modal.open({
+                templateUrl: 'views/modal-task.html',
+                controller: 'ModalTaskCtrl'
+            });
+        };
+    })
+    .controller('ModalTaskCtrl', function($scope, $modal) {
+        $scope.exit = function() {
+            $modal.dismiss();
+        };
     })
 ;
