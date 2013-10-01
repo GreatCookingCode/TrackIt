@@ -6,14 +6,14 @@ angular.module('trackitWebApp.controllers')
         $scope.doingTasks = Task.query();
         $scope.doneTasks = Task.query();
 
-        $scope.task = {};
+        $scope.task = new Task();
 
         $scope.add = function() {
-            $scope.task.save({})
-                .success(function() {
+            $scope.task.$save({},
+                function() {
 
-                })
-                .error(function() {
+                },
+                function() {
 
                 })
             ;
