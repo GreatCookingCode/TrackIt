@@ -37,3 +37,23 @@ body {
     margin: 5px;
     border-radius: 2px;
 }
+
+.create-task {
+    margin: 10px;
+    height: 30px;
+}
+
+.create-task input {
+    width: 200px;
+    float: left;
+    margin-right: 10px;
+}
+
+.create-task select {
+    float: left;
+    width: 100px;
+}
+
+.create-task button {
+    margin-left: 10px;
+}

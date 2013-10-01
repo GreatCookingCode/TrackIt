@@ -1,7 +1,13 @@
-<div>
-    <table>
-        
-    </table>
+<div class="clearfix">
+    <div class="create-task">
+        <input type="text" class="form-control" ng-model="task.status">
+        <select class="form-control" ng-model="task.status">
+            <option value="Todo">Todo</option>
+            <option value="Doing">Doing</option>
+            <option value="Done">Done</option>
+        </select>
+        <button class="btn btn-info" ng-click="add()">Add</button>
+    </div>
 </div>
 <div>
     <div class="todo-cols" id="todo-list">
